@@ -1,5 +1,4 @@
 const express = require("express");
-//const logger = require('../logger')
 const NotesService = require("./notes-service");
 
 const notesRouter = express.Router();
@@ -25,7 +24,6 @@ notesRouter
   .post(bodyParser, (req, res, next) => {
     const { note_name, folderid, content, date_modified } = req.body;
     const newNote = { note_name, folderid, content, date_modified };
-    //console.log(newNote)
 
     for (const [key, value] of Object.entries(newNote)) {
       if (value == null) {

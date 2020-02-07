@@ -1,5 +1,4 @@
 const express = require("express");
-//const logger = require('../logger')
 const FoldersService = require("./folders-service");
 
 const foldersRouter = express.Router();
@@ -22,7 +21,6 @@ foldersRouter
   .post(bodyParser, (req, res, next) => {
     const { folder_name } = req.body;
     const newFolder = { folder_name };
-    // console.log(newFolder)
     if (!folder_name) {
       return res.status(400).send(`Folder name is required`);
     }
