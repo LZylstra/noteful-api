@@ -32,7 +32,7 @@ foldersRouter
         res
           .status(201)
           .location(`folders/${folder.id}`)
-          .json(serializefolder);
+          .json(serializefolder(folder));
       })
       .catch(next);
   });
